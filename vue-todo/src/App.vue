@@ -14,6 +14,22 @@ import TodoList from './components/TodoList.vue'
 import TodoFooter from './components/TodoFooter.vue'
 
 export default {
+  data: function(){
+    return {
+      todoItems: []
+    }
+  },
+  created: function(){
+    // console.log('create')
+    if( localStorage.length > 0 ){ 
+      for( var i = 0; i < localStorage.length; i++ ){
+        if( localStorage.key(i) !== 'loglevel:webpack-dev-server' ){
+          this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+          // this.todoItems.push(localStorage.key(i));
+        }
+      }
+    }
+  },
   components: {
     // '태그명' : 컴포넌트 명
     'TodoHeader': TodoHeader,
