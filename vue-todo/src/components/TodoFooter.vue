@@ -7,11 +7,11 @@
 <script>
 export default {
   methods: {
-    clearTodo: function() {
-      this.$emit('clearAll');
+    clearTodo() {
+      this.$emit("clearAll");
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -21,11 +21,11 @@ export default {
   line-height: 50px;
   background: #fff;
   border-radius: 5px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 .clearAllbtn {
   display: block;
-  color:#e20303;
+  color: #e20303;
   cursor: pointer;
 }
 </style>
